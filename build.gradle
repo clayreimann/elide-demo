@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+// In this section you declare where to find the dependencies of your project
+// these repositories are searched in the order they are declared
+repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile "com.yahoo.elide:elide-standalone:4.0-alpha-3"
+}
