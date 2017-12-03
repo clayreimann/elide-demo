@@ -12,9 +12,9 @@ import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-@Include(rootLevel = true, type = "group")
+@Include(type = "product")
 @Entity
-public class ArtifactGroup {
+public class ArtifactProduct {
     @Id
     public String name = "";
 
@@ -22,6 +22,9 @@ public class ArtifactGroup {
 
     public String description = "";
 
-    @OneToMany(mappedBy = "group")
-    public List<ArtifactProduct> products = new ArrayList<>();
+    @ManyToOne
+    public ArtifactGroup group = null;
+
+    @OneToMany(mappedBy = "artifact")
+    public List<ArtifactVersion> versions = new ArrayList<>();
 }
